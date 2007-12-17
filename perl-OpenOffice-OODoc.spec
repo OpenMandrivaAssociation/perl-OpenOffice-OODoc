@@ -20,7 +20,6 @@ BuildRequires:	perl-devel
 BuildRequires:	perl(XML::Twig)
 BuildRequires:	perl(Archive::Zip)
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 A library for Open Document processing
