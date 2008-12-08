@@ -1,6 +1,6 @@
 %define module	OpenOffice-OODoc
 %define name	perl-%{module}
-%define version 2.106
+%define version 2.107
 %define release %mkrel 1
 
 #(nl) this 2 requires are not needed, they are on a exemple file only
