@@ -1,24 +1,25 @@
-%define module	OpenOffice-OODoc
-%define name	perl-%{module}
-%define version 2.108
-%define release %mkrel 1
+%define upstream_name	 OpenOffice-OODoc
+%define upstream_version 2.109
 
 #(nl) this 2 requires are not needed, they are on a exemple file only
 %define _requires_exceptions  perl(Tk::Dialog)\\|perl(Tk) 
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
-Summary:	%{module} module for perl
-License:	GPL or Artistic
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
+Summary:	%{upstream_name} module for perl
+License:	GPL+ or Artistic
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{module}/
-Source:		http://www.cpan.org/modules/by-module/OpenOffice/%{module}-%{version}.tar.bz2
+Url:		http://search.cpan.org/dist/%{upstream_name}/
+Source0:	http://www.cpan.org/modules/by-module/OpenOffice/%{upstream_name}-%{upstream_version}.tar.gz
+
 %if %{mdkversion} < 1010
 BuildRequires:	perl-devel
 %endif
-BuildRequires:	perl(XML::Twig)
 BuildRequires:	perl(Archive::Zip)
+BuildRequires:	perl(XML::Twig)
+
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
@@ -26,14 +27,14 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}
 A library for Open Document processing
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor < /dev/null
 %make
 
 %check
-%{__make} test
+%make test
 
 %install
 rm -rf %{buildroot}
@@ -47,5 +48,3 @@ rm -rf %{buildroot}
 %{_bindir}/*
 %{perl_vendorlib}/OpenOffice
 %{_mandir}/*/*
-
-
