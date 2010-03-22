@@ -1,5 +1,5 @@
 %define upstream_name	 OpenOffice-OODoc
-%define upstream_version 2.122
+%define upstream_version 2.123
 
 #(nl) this 2 requires are not needed, they are on a exemple file only
 %define _requires_exceptions  perl(Tk::Dialog)\\|perl(Tk) 
