@@ -9,14 +9,14 @@
 %endif
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Version:	%{upstream_version}
+Release:	5
 
 Summary:	%{upstream_name} module for perl
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}/
-Source0:	http://www.cpan.org/modules/by-module/OpenOffice/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://metacpan.org/dist/OpenOffice-OODoc
+Source0:	https://cpan.metacpan.org/authors/id/J/JM/JMGDOC/OpenOffice-OODoc-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
