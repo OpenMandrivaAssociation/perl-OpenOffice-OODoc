@@ -1,6 +1,4 @@
 %define upstream_name	 OpenOffice-OODoc
-%define upstream_version 2.125
-
 #(nl) this 2 requires are not needed, they are on a exemple file only
 %if %{_use_internal_dependency_generator}
 %define __noautoreq 'perl\\(Tk::Dialog\\)|perl\\(Tk\\)'
@@ -9,14 +7,14 @@
 %endif
 
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	5
+Version:	2.125
+Release:	6
 
 Summary:	%{upstream_name} module for perl
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/OpenOffice-OODoc
-Source0:	https://cpan.metacpan.org/authors/id/J/JM/JMGDOC/OpenOffice-OODoc-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/J/JM/JMGDOC/OpenOffice-OODoc-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -29,7 +27,7 @@ BuildArch:	noarch
 A library for Open Document processing
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor < /dev/null
